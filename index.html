@@ -1,0 +1,68 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+   
+    <script src="tappable.js"></script>
+   <script type="text/javascript" src="jquery-2.0.2.min.js"></script>
+  
+    
+   
+  
+    
+ 
+
+
+</head>
+<body >
+
+
+   
+
+<div id="framework">  
+  <div class="toolbar">The ToolBar</div><!-- Not fix on pull down or pull up yet -->
+
+
+
+      <section id="pageOne" class="page" ><!-- PAGE 1-->
+
+        <div class="buttonOne" >PAGE ONE
+            <div class="track" id="buttonCover" href="#pageTwo"></div><!-- onClick='setTimeout(function() { nav.turnPage(this);}, 300)'-->
+        </div>
+
+      </section>
+
+
+
+      <section id="pageTwo" class="page" > <!-- PAGE 2-->
+
+        <div class="buttonTwo">PAGE TWO
+             <div class="track" id="buttonCover" href="#pageOne" ></div><!-- onClick='setTimeout(function() { nav.goForward(this);}, 300)'-->
+      </div>
+
+      </section>
+
+
+       <section id="pageThree"> <!-- PAGE 3-->
+
+        <div class="buttonTwo">
+            <div class="track" id="buttonCover" >PAGE TWO</div><!-- onClick='setTimeout(function() { nav.goForward(this);}, 300)'-->
+      </div>
+
+      </section>
+
+
+
+</div> 
+
+  <div class="backButton">BACK<div>
+    <script>
+tappable("#items",{activeClassDelay:50,inactiveClassDelay:500});
+
+</script>
+    
+      <script src="click.js"></script>
+</body></html>
