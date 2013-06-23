@@ -40,6 +40,8 @@ $("body").data({ baz: [], baz_2: []});
                                         //}
                                         $("body").data('baz').push(currentId);
                                         $("body").data('baz_2').push(nextId);
+
+                                        /*
  var baz = $("body").data('baz');
   var baz_2 = $("body").data('baz_2');
  //baz.unshift(currentId);
@@ -57,7 +59,7 @@ $("body").data({ baz: [], baz_2: []});
                                         }                                    
 
                                         //alert(test + " " + test1 + " <--- this goes in the back button");
-                                        
+              */                          
  });
 
 
@@ -67,7 +69,11 @@ $("body").data({ baz: [], baz_2: []});
                                           // alert('this is the value to go back to ' + forwardArray[0]);
             
             var baz = $("body").data('baz');
-                                 alert('this is the value to go back to ' + baz[baz.length -1]);
+                                 var lastId  = baz[baz.length -1];
+
+            var baz_2 = $("body").data('baz_2');
+                                 var currentId = baz_2[baz_2.length -1];
+
      $("body").data('baz').pop();
                                       
                   //forwardArray.shift(currentId);
@@ -76,11 +82,22 @@ $("body").data({ baz: [], baz_2: []});
                                         //{
                                          //   alert("The value (" + t + ") **now*** stored is: " + forwardArray[t])
                                         //}
-                                   var lastId  = $("body").data("lastId");
-                                        var currentId = $("body").data("currentId");
+                                   //var lastId  = $("body").data("lastId");
+                                        //var currentId = $("body").data("currentId");
 
 
                                               $("#" + lastId).removeClass().addClass("inLeft");
                                                 $(currentId).removeClass().addClass("outRight");
                                       });
+
+
+
+
+
+
+
+
+
+
+
 
