@@ -77,8 +77,8 @@ $("body").data({ baz: [], baz_2: []});
 
      $("body").data('baz').pop();
      $("body").data('baz_2').pop();
-                         alert(currentId);
-                         alert(lastId);
+                         //alert(currentId);
+                         //alert(lastId);
                   //forwardArray.shift(currentId);
                   
                                         //for (t = 0; t < forwardArray.length; t++)
