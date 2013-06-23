@@ -1,4 +1,4 @@
- 
+
 
 
 
@@ -20,7 +20,7 @@ $("body").data({ baz: [], baz_2: []});
 
                                        var nextId = $(e.target).attr('href'); // each page has class .page and we get the id of it.  
                                       // var currentId = $(this).attr('id');
-                                       alert(currentId)
+                                       //alert(currentId)
                                      // return true;
                                        // match  the add that is retrieved to the function call, and somehow get the id of product
 
@@ -28,7 +28,7 @@ $("body").data({ baz: [], baz_2: []});
                                        $(nextId).removeClass().addClass('inRight');
 
 
-                                          $("body").data({"lastId":currentId,"currentId":nextId});
+                                          //$("body").data({"lastId":currentId,"currentId":nextId});
                                       // $("body").data({"name":"Stevie","id":currentId});
  
                                         var test = $("body").data("id");
