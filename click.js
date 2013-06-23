@@ -2,7 +2,7 @@
 
 
 
-
+var forwardArray = [];
 
   $('.track').on("click", function(e)
                                       {
@@ -28,11 +28,20 @@
 
                                           $("body").data({"lastId":currentId,"currentId":nextId});
                                       // $("body").data({"name":"Stevie","id":currentId});
+ 
+                                        var test = $("body").data("id");
+                                        //alert(test + " <--- this goes in the back button");
+                                        forwardArray.unshift(currentId);
+                                        for (t = 0; t < forwardArray.length; t++)
+                                        {
+                                            alert("The value (" + t + ") stored is: " + forwardArray[t])
+                                        }
+ 
                                       
 
-                                        alert(test + " " + test1 + " <--- this goes in the back button");
+                                        //alert(test + " " + test1 + " <--- this goes in the back button");
                                         
-                                      });
+ });
 
 
 
