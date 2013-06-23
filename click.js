@@ -49,12 +49,6 @@ var forwardArray = [];
                                       {
                                            alert('this is the value to go back to ' + forwardArray[0]);
 
-<<<<<<< HEAD
-                                  
-
-                                        var lastId  = $("body").data("lastId")[-1];
-                                        var currentId = $("body").data("currentId")[-1];
-=======
                                       
                                       
                   forwardArray.shift(currentId);
@@ -65,16 +59,9 @@ var forwardArray = [];
                                         }*/
                                    var lastId  = $("body").data("lastId");
                                         var currentId = $("body").data("currentId");
->>>>>>> 9b0bfc38cbad585a671bf390a7b4ef587e79bf3c
 
 
                                               $("#" + lastId).removeClass().addClass("inLeft");
                                                 $(currentId).removeClass().addClass("outRight");
-
-
-                                                    var myData = JSON.parse("body").data;    
-                                                    alert(myData)
-
                                       });
-
 
