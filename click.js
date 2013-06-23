@@ -34,7 +34,7 @@ var forwardArray = [];
                                         forwardArray.unshift(currentId);
                                         for (t = 0; t < forwardArray.length; t++)
                                         {
-                                            alert("The value (" + t + ") stored is: " + forwardArray[t])
+                                         //   alert("The value (" + t + ") stored is: " + forwardArray[t])
                                         }
  
                                       
@@ -47,10 +47,17 @@ var forwardArray = [];
 
           $('.backButton').click(function()
                                       {
+                                           alert('this is the value to go back to ' + forwardArray[0]);
 
-                                  
-
-                                        var lastId  = $("body").data("lastId");
+                                      
+                                      
+                  forwardArray.shift(currentId);
+                  
+                                        /*for (t = 0; t < forwardArray.length; t++)
+                                        {
+                                         //   alert("The value (" + t + ") **now*** stored is: " + forwardArray[t])
+                                        }*/
+                                   var lastId  = $("body").data("lastId");
                                         var currentId = $("body").data("currentId");
 
 
