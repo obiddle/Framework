@@ -1,101 +1,46 @@
+/*       */
+
+$("body").data({ baz: [], baz_2: []}); // create array stored in body to track the back button
 
 
 
+// Add class track to element to turn the page
 
-//var forwardArray = [];
-$("body").data({ baz: [], baz_2: []});
-//$("body").data({ });
+ $('.track').on("click", function(e) 
+                                    {
+                                       var currentId = $(e.target).closest('section').attr('id'); // closest goes up the dom tree to location the first section then get it's id and store it
 
-  $('.track').on("click", function(e){ goForward(e); });
-                                     function goForward(e)
-                                      {
-                                       var currentId = $(e.target).closest('section').attr('id'); 
+                                       var nextId = $(e.target).attr('href'); // at href page id to button to get the next page, this gets it and stores 
+                                   
 
-                                       //var currentId = $(this).parent().parent().attr('id');
+                                       // classes have to be removed here, can be improved
+                                       $("#" + currentId).removeClass().addClass("outLeft"); // slide page out
+                                       $(nextId).removeClass().addClass('inRight');  // slide page in
 
-                                       // alert(event.target.id);
-
-                                       //var setId = $(this).closest('.page'); 
-                                       //var currentId = setId.attr('id'); 
-
-
-                                       var nextId = $(e.target).attr('href'); // each page has class .page and we get the id of it.  
-                                      // var currentId = $(this).attr('id');
-                                       //alert(currentId)
-                                     // return true;
-                                       // match  the add that is retrieved to the function call, and somehow get the id of product
-
-                                       $("#" + currentId).removeClass().addClass("outLeft");
-                                       $(nextId).removeClass().addClass('inRight');
-
-
-                                          //$("body").data({"lastId":currentId,"currentId":nextId});
-                                      // $("body").data({"name":"Stevie","id":currentId});
+                                       $("body").data('baz').push(currentId); // store the current page id into an array
+                                       $("body").data('baz_2').push(nextId);  // store the next page into an array
  
-                                        var test = $("body").data("id");
-                                        //alert(test + " <--- this goes in the back button");
-                                        //forwardArray.unshift(currentId);
-                                        //for (t = 0; t < forwardArray.length; t++)
-                                        //{
-                                           // alert("The value (" + t + ") stored is: " + forwardArray[t])
-                                        //}
-                                        $("body").data('baz').push(currentId);
-                                        $("body").data('baz_2').push(nextId);
-
-                                        /*
- var baz = $("body").data('baz');
-  var baz_2 = $("body").data('baz_2');
- //baz.unshift(currentId);
- //baz = $("body").data({'baz': baz});
-  for (t = 0; t < baz.length; t++)
-  {
-      alert(baz[t] + ' <--- getting these values');
-  }
-  for (t = 0; t < baz_2.length; t++)
-  {
-      alert(baz_2[t] + ' <--- getting these values for baz2');
-  }
-                                        {
-                                         //   alert("The value (" + t + ") stored is: " + forwardArray[t])
-                                        }                                    
-
-                                        //alert(test + " " + test1 + " <--- this goes in the back button");
-              */                          
- }
+                        
+});
 
 
+// Back button, .track gets the data and the back button calls it from .data that is store in body
 
-          $('.backButton').click(function()
-                                      {
-                                          // alert('this is the value to go back to ' + forwardArray[0]);
-            
-            var baz = $("body").data('baz');
-                                 var lastId  = baz[baz.length -1];
+$('.backButton').click(function()
+                                 {
+                                      var baz = $("body").data('baz'); // get array
+                                      var lastId  = baz[baz.length -1]; // get the last row
 
-            var baz_2 = $("body").data('baz_2');
-                                 var currentId = baz_2[baz_2.length -1];
+                                      var baz_2 = $("body").data('baz_2');
+                                      var currentId = baz_2[baz_2.length -1];
 
-     $("body").data('baz').pop();
-     $("body").data('baz_2').pop();
-                         //alert(currentId);
-                         //alert(lastId);
-                  //forwardArray.shift(currentId);
-                  
-                                        //for (t = 0; t < forwardArray.length; t++)
-                                        //{
-                                         //   alert("The value (" + t + ") **now*** stored is: " + forwardArray[t])
-                                        //}
-                                   //var lastId  = $("body").data("lastId");
-                                        //var currentId = $("body").data("currentId");
+                                      $("#" + lastId).removeClass().addClass("inLeft"); // slide page in
+                                      $(currentId).removeClass().addClass("outRight");  // slide page out
 
-
-                                              $("#" + lastId).removeClass().addClass("inLeft");
-                                                $(currentId).removeClass().addClass("outRight");
-                                   $('.track').on("click", function(e){ goForward(e); });    
-                                  });
-
-
-
+                                      $("body").data('baz').pop(); // delete the last item stored in array
+                                      $("body").data('baz_2').pop();
+                                 
+});
 
 
 

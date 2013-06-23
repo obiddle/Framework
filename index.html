@@ -23,14 +23,14 @@
    
 
 <div id="framework">  
-  <div class="toolbar">The ToolBar</div><!-- Not fix on pull down or pull up yet -->
+  <div class="toolbar">The ToolBar</div>
 
 
 
-      <section id="pageOne" class="page" ><!-- PAGE 1-->
+      <section id="pageOne" class="page" ><!-- PAGE 1   each page needs section and class page -->
 
         <div class="buttonOne" >PAGE ONE
-            <div class="track" id="buttonCover" href="#pageTwo"></div><!-- onClick='setTimeout(function() { nav.turnPage(this);}, 300)'-->
+            <div class="track" id="buttonCover" href="#pageTwo"></div><!-- add the page you want to visit into href.  must have .track to trigger page transition and store object into back button-->
         </div>
 
       </section>
@@ -40,7 +40,7 @@
       <section id="pageTwo" class="page" > <!-- PAGE 2-->
 
         <div class="buttonOne">PAGE TWO
-             <div class="track" id="buttonCover" href="#pageThree" ></div><!-- onClick='setTimeout(function() { nav.goForward(this);}, 300)'-->
+             <div class="track" id="buttonCover" href="#pageThree" ></div>
       </div>
 
       </section>
@@ -49,7 +49,7 @@
        <section id="pageThree" class="page"> <!-- PAGE 3-->
 
         <div class="buttonOne">PAGE THREE
-           <div class="track" id="buttonCover" href="#pageOne" ></div><!-- onClick='setTimeout(function() { nav.goForward(this);}, 300)'-->
+           <div class="track" id="buttonCover" href="#pageOne" ></div>
       </div>
 
       </section>
@@ -58,9 +58,11 @@
 
 </div> 
 
-  <div class="backButton">BACK<div>
+  <div class="backButton">BACK
+<div id="buttonCover"></div>
+  <div>
     <script>
-tappable("#items",{activeClassDelay:50,inactiveClassDelay:500});
+tappable("#buttonCover",{activeClassDelay:50,inactiveClassDelay:500});
 
 </script>
     
