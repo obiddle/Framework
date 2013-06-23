@@ -28,21 +28,20 @@ var forwardArray = [];
 
                                           $("body").data({"lastId":currentId,"currentId":nextId});
                                       // $("body").data({"name":"Stevie","id":currentId});
-<<<<<<< HEAD
+ 
                                         var test = $("body").data("id");
                                         //alert(test + " <--- this goes in the back button");
-                                        forwardArray.unshift(test);
+                                        forwardArray.unshift(currentId);
                                         for (t = 0; t < forwardArray.length; t++)
                                         {
                                             alert("The value (" + t + ") stored is: " + forwardArray[t])
                                         }
-=======
+ 
                                       
 
-                                        alert(test + " " + test1 + " <--- this goes in the back button");
+                                        //alert(test + " " + test1 + " <--- this goes in the back button");
                                         
->>>>>>> 266e66a6eed6665265b84fc91fdc40325f4bc74c
-                                      });
+ });
 
 
 
