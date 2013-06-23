@@ -3,27 +3,38 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+   
 
    
     <script src="tappable.js"></script>
    <script type="text/javascript" src="jquery-2.0.2.min.js"></script>
-  
+
+   <link rel="stylesheet" type="text/css" href="styles.css" />
     
-   
-  
-    
- 
 
 
 </head>
 <body >
 
 
+  <div class="toolbar">
+
+       <div id="pageTwoBar" class="noOpacity"> PAGE TWO
+              <div class="back">BACK   <!-- Back button, collects data each time .track is clicked -->
+                <div id="buttonCover"></div> <!-- it's all about the touch effect when using html5 in native applications, this uses tappable.js -->
+              </div>
+      </div>
+       <div id="pageThreeBar" class="noOpacity"> PAGE THREE
+              <div class="back">BACK   <!-- Back button, collects data each time .track is clicked -->
+                <div id="buttonCover"></div> <!-- it's all about the touch effect when using html5 in native applications, this uses tappable.js -->
+              </div>
+      </div>
+
+  </div>
    
 
 <div id="framework">  
-  <div class="toolbar">The ToolBar</div>
+
 
 
 
@@ -58,13 +69,12 @@
 
 </div> 
 
-  <div class="backButton">BACK
-<div id="buttonCover"></div>
-  <div>
-    <script>
-tappable("#buttonCover",{activeClassDelay:50,inactiveClassDelay:500});
 
-</script>
-    
-      <script src="click.js"></script>
+
+ <div class="clear">CLEAR <!-- resets back button -->
+        <div id="buttonCover"></div>
+  </div> 
+    <script>tappable("#buttonCover",{activeClassDelay:50,inactiveClassDelay:500});</script> 
+    <script src="click.js"></script> <!-- put at bottom, testing how this works with body load -->
+      
 </body></html>

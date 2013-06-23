@@ -1,16 +1,35 @@
-/* ---------------------------------  IGNORE bording page set up css  ------------------------------------   */
-body {font-family:arial; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout: none;-webkit-user-select: none;margin:0;padding:0; background-color:#fff;}
+
+/*!
+ *
+ * Hundo Framework Demo
+ * http://goHundo.com/
+ *
+ * Created by Owen Biddle
+ * Copywrite iO Ganics inc
+ *
+ * Fork it! https://github.com/obiddle/Framework
+ *
+ */
+
+
+/* ---------------------------------  page set up css  ------------------------------------   */
+body {font-family:arial; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout: none;-webkit-user-select: none;margin:0;padding:0; background-color:#fff;width: 100%}
 #buttonCover {position:absolute;top:0px; left:0px;  height:100%; width:100%;z-index:98;}
 #buttonCover.tappable-active{ background-color:rgba(0,0,0,0.3);}
 #framework {position: absolute; top: 0;left: 0;z-index: 1;width:100%;height:100%;overflow: hidden;}
-.toolbar {width:100%;height:50px;top:0;left:0;z-index:13; text-align: center;background-color:#333;position:absolute;-webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.4);line-height:50px;font-size:20px;color:#fff;}
+.toolbar {position:absolute;z-index:13;width:100%;height:50px;top:0;left:0; text-align: center;background-color:#333;-webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.4);line-height:50px;font-size:20px;color:#fff;}
 
 /* ---------------------------------  START    ------------------------------------   */
 
+/* don't hate on same style properties for different id or classes.  We prefer a bigger file that takes less time to render than a small file going up and down the dom tree looking for css properties */
 
+/* ---------------------------------  TOOLBARS    ------------------------------------   */
 
+#pageTwoBar {position:absolute;z-index:13;width:100%;height:50px;top:0;left:0; text-align: center;line-height:50px;font-size:20px;color:#fff;}
 
-/* --------------------------------- the home page ------------------------------------   */
+#pageThreeBar {position:absolute;z-index:13;width:100%;height:50px;top:0;left:0; text-align: center;line-height:50px;font-size:20px;color:#fff;}
+
+/* --------------------------------- HOME PAGE ------------------------------------   */
 
 #pageOne{position:absolute;z-index:20; width:100%;height:100%;visibility:visible;-webkit-transform: translate3d(0,0,0);}
 
@@ -19,43 +38,44 @@ body {font-family:arial; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touc
 
 
 
-/* ---------------------------------  any other page    ------------------------------------   */
+/* ---------------------------------  ANOTHER PAGE    ------------------------------------   */
 
 #pageTwo{position:absolute;z-index:99; width:100%;height:100%;visibility:visible;-webkit-transform: translate3d(100%,0,0);}
 
 
 
-/* ---------------------------------  any other page    ------------------------------------   */
+/* ---------------------------------  NEW PAGE    ------------------------------------   */
 
 #pageThree{position:absolute;z-index:99; width:100%;height:100%;visibility:visible;-webkit-transform: translate3d(100%,0,0);}
 
 
-
-
-
-
 /* --------------------------------- backButton for all pages   ------------------------------------   */
 
-.backButton {position:absolute; z-index:99; top: 10px;left:10px; color: #fff;background-color:#000;height: 30px;width: 100px;border-radius: 5px;color: #fff;line-height: 30px;text-align: center;}
+.back {position:absolute;z-index:99; top: 10px;left:10px; color: #fff;background-color:#000;height: 30px;width: 100px;border-radius: 5px;color: #fff;line-height: 30px;text-align: center;font-size: 16px;}
 
+/* --------------------------------- reset Back button   ------------------------------------   */
 
+.clear {position:absolute;z-index:99; top: 10px;right:10px; color: #fff;background-color:#000;height: 30px;width: 100px;border-radius: 5px;color: #fff;line-height: 30px;text-align: center;}
 
 
 
 /* ---------------------------------  class that are added to run the animation   ------------------------------------   */
-/* animations will not work twice in a row for the same id, we could change to transition. also add visibiliy hidden in transition  */
+/* animations will not work twice in a row for the same id, we could change to use transitions with visibiliy hidden / visible  */
 
 .outLeft {-webkit-animation: outLeft  0.3s ease-out forwards;} /* browser do not like linear */
 .inLeft {-webkit-animation: inLeft  0.3s ease-out forwards;}
 .inRight {-webkit-animation: inRight 0.3s ease-out forwards;}
 .outRight {-webkit-animation: outRight 0.3s ease-out forwards;}
 
-.opacity {opacity: 1;}
+
+/* ---------------------------------  Toolbar Transitions  ------------------------------------   */
+
+.opacity {opacity: 1; visibility: visible;-webkit-transition:visibility 0s linear 0s,opacity 0.3s ease-in;}
 .noOpacity {opacity: 0;visibility: hidden;-webkit-transition:visibility 0s linear 0.5s,opacity 0.3s ease-in;}
 
 
 
-/* ---------------------------------  Animations  ------------------------------------   */
+/* --------------------------------- Page  Animations  ------------------------------------   */
 
 @-webkit-keyframes outLeft {
 
