@@ -3,6 +3,7 @@
 
 
 var forwardArray = [];
+$("body").data({ baz: []});
 
   $('.track').on("click", function(e)
                                       {
@@ -34,10 +35,19 @@ var forwardArray = [];
                                         forwardArray.unshift(currentId);
                                         for (t = 0; t < forwardArray.length; t++)
                                         {
-                                         //   alert("The value (" + t + ") stored is: " + forwardArray[t])
+                                           // alert("The value (" + t + ") stored is: " + forwardArray[t])
                                         }
- 
-                                      
+                                        $("body").data('baz').push(currentId);
+ var baz = $("body").data('baz');
+ //baz.unshift(currentId);
+ //baz = $("body").data({'baz': baz});
+  for (t = 0; t < baz.length; t++)
+  {
+      //alert(baz[t] + ' <--- getting these values');
+  }
+                                        {
+                                         //   alert("The value (" + t + ") stored is: " + forwardArray[t])
+                                        }                                    
 
                                         //alert(test + " " + test1 + " <--- this goes in the back button");
                                         
@@ -48,15 +58,17 @@ var forwardArray = [];
           $('.backButton').click(function()
                                       {
                                            alert('this is the value to go back to ' + forwardArray[0]);
-
-                                      
+            
+            var baz = $("body").data('baz');
+                                 alert('this is the value to go back to ' + baz[baz.length -1]);
+     $("body").data('baz').pop();
                                       
                   forwardArray.shift(currentId);
                   
-                                        /*for (t = 0; t < forwardArray.length; t++)
+                                        for (t = 0; t < forwardArray.length; t++)
                                         {
                                          //   alert("The value (" + t + ") **now*** stored is: " + forwardArray[t])
-                                        }*/
+                                        }
                                    var lastId  = $("body").data("lastId");
                                         var currentId = $("body").data("currentId");
 
