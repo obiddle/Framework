@@ -41,12 +41,17 @@
 
                                   
 
-                                        var lastId  = $("body").data("lastId");
-                                        var currentId = $("body").data("currentId");
+                                        var lastId  = $("body").data("lastId")[-1];
+                                        var currentId = $("body").data("currentId")[-1];
 
 
                                               $("#" + lastId).removeClass().addClass("inLeft");
                                                 $(currentId).removeClass().addClass("outRight");
+
+
+                                                    var myData = JSON.parse("body").data;    
+                                                    alert(myData)
+
                                       });
 
 
