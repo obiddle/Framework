@@ -6,7 +6,8 @@
 $("body").data({ baz: [], baz_2: []});
 //$("body").data({ });
 
-  $('.track').on("click", function(e)
+  $('.track').on("click", function(e){ goForward(e); });
+                                     function goForward(e)
                                       {
                                        var currentId = $(e.target).closest('section').attr('id'); 
 
@@ -60,7 +61,7 @@ $("body").data({ baz: [], baz_2: []});
 
                                         //alert(test + " " + test1 + " <--- this goes in the back button");
               */                          
- });
+ }
 
 
 
@@ -75,7 +76,9 @@ $("body").data({ baz: [], baz_2: []});
                                  var currentId = baz_2[baz_2.length -1];
 
      $("body").data('baz').pop();
-                                      
+     $("body").data('baz_2').pop();
+                         alert(currentId);
+                         alert(lastId);
                   //forwardArray.shift(currentId);
                   
                                         //for (t = 0; t < forwardArray.length; t++)
@@ -88,7 +91,8 @@ $("body").data({ baz: [], baz_2: []});
 
                                               $("#" + lastId).removeClass().addClass("inLeft");
                                                 $(currentId).removeClass().addClass("outRight");
-                                      });
+                                   $('.track').on("click", function(e){ goForward(e); });    
+                                  });
 
 
 
