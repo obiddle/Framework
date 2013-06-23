@@ -24,7 +24,12 @@
 
                                        $("#" + currentId).removeClass().addClass("outLeft");
                                        $(nextId).removeClass().addClass('inRight');
-    
+
+
+                                          $("body").data({"id":currentId});
+                                      // $("body").data({"name":"Stevie","id":currentId});
+                                        var test = $("body").data("id");
+                                        alert(test + " <--- this goes in the back button");
                                         
                                       });
 
