@@ -3,7 +3,8 @@
 
 
 var forwardArray = [];
-$("body").data({ baz: []});
+$("body").data({ baz: [], baz_2: []});
+//$("body").data({ });
 
   $('.track').on("click", function(e)
                                       {
@@ -38,12 +39,18 @@ $("body").data({ baz: []});
                                            // alert("The value (" + t + ") stored is: " + forwardArray[t])
                                         }
                                         $("body").data('baz').push(currentId);
+                                        $("body").data('baz_2').push(nextId);
  var baz = $("body").data('baz');
+  var baz_2 = $("body").data('baz_2');
  //baz.unshift(currentId);
  //baz = $("body").data({'baz': baz});
   for (t = 0; t < baz.length; t++)
   {
-      //alert(baz[t] + ' <--- getting these values');
+      alert(baz[t] + ' <--- getting these values');
+  }
+  for (t = 0; t < baz_2.length; t++)
+  {
+      alert(baz_2[t] + ' <--- getting these values for baz2');
   }
                                         {
                                          //   alert("The value (" + t + ") stored is: " + forwardArray[t])
