@@ -26,8 +26,9 @@ var forwardArray = [];
                                        $(nextId).removeClass().addClass('inRight');
 
 
-                                          $("body").data({"id":currentId});
+                                          $("body").data({"lastId":currentId,"currentId":nextId});
                                       // $("body").data({"name":"Stevie","id":currentId});
+<<<<<<< HEAD
                                         var test = $("body").data("id");
                                         //alert(test + " <--- this goes in the back button");
                                         forwardArray.unshift(test);
@@ -35,6 +36,12 @@ var forwardArray = [];
                                         {
                                             alert("The value (" + t + ") stored is: " + forwardArray[t])
                                         }
+=======
+                                      
+
+                                        alert(test + " " + test1 + " <--- this goes in the back button");
+                                        
+>>>>>>> 266e66a6eed6665265b84fc91fdc40325f4bc74c
                                       });
 
 
@@ -42,14 +49,14 @@ var forwardArray = [];
           $('.backButton').click(function()
                                       {
 
-                                   var currentId = "#pageTwo";
-                                    var previousId = "#pageOne";
+                                  
 
-                                      
+                                        var lastId  = $("body").data("lastId");
+                                        var currentId = $("body").data("currentId");
 
 
-                                              $(previousId).removeClass().addClass("inLeft");
-                                                $(pageTwo).removeClass().addClass("outRight");
+                                              $("#" + lastId).removeClass().addClass("inLeft");
+                                                $(currentId).removeClass().addClass("outRight");
                                       });
 
 
