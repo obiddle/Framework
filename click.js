@@ -33,8 +33,14 @@
           $('.backButton').click(function()
                                       {
 
-                                              $(pageIn).removeClass().addClass("inLeft");
-                                                $(pageOut).removeClass().addClass("outRight");
+                                   var currentId = "#pageTwo";
+                                    var previousId = "#pageOne";
+
+                                      
+
+
+                                              $(previousId).removeClass().addClass("inLeft");
+                                                $(pageTwo).removeClass().addClass("outRight");
                                       });
 
 
